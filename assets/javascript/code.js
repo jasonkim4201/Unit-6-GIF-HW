@@ -9,15 +9,16 @@
 //GLOBAL VARIABLES
 var food = ["taco", "pancakes", "pizza"];
 console.log(food);
-
+renderButtons();
 //search food button
 $("#searchBtn").on("click", function(event) {
-console.log("clicked.");
+
 event.preventDefault();
 
-var foodSearched = $("#food-input").val();
+var foodSearched = $("#foodInput").val().trim();
 food.push(foodSearched);
-
+console.log(food);
+renderButtons();
 });
 
 
@@ -25,13 +26,12 @@ food.push(foodSearched);
 function renderButtons() {
   $("#foodButtonArea").empty();
 
-  for (var i = 0; i < food; i++) {
+  for (var i = 0; i < food.length; i++) {
     var foodButton = $("<button>");
-    foodButton.addClass();
-    foodButton.attr();
+    foodButton.addClass("btn btn-primary btn-lg");
+    foodButton.attr("data-name", food[i]);
     foodButton.text(food[i]);
     $("#foodButtonArea").append(foodButton);
-
   }
 }
 
