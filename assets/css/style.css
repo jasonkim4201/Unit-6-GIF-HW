@@ -13,6 +13,12 @@ body {
   align-items: center;
 }
 
+#food-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #board {
   background: url(../images/jumbotron.png);
   background-position: center;
