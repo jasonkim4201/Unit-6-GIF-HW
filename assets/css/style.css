@@ -7,6 +7,18 @@ body {
   margin: 3px;
 }
 
+.cssPFix {
+  margin-left: 100px;
+  font-weight: bold;
+}
+
+.gif {
+  width: 250px;
+  height: 250px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 #jumboBtn{
   display: flex;
   justify-content: center;

@@ -1,10 +1,3 @@
-// create an array of strings and save to variable called topics. DONE
-//app should take the topics in this array and create buttons in HTML. Try using a loop that appends a button for each string in the array. DONE
-//When the user clicks on a button, the page should grab 10 static, non-animated gif images from the GIPHY API and place them on the page. DONE kinda...
-// Under every gif, display its rating (PG, G, so on).
-//Add a form to your page takes the value from a user input box and adds it into your topics array. Then make a function call that takes each topic in the array remakes the buttons on the page.
-
-
 //GLOBAL VARIABLES
 var food = ["taco", "pancakes", "pizza"];
 console.log(food);
@@ -61,7 +54,9 @@ function displayFood() {
 
     for (var j = 0; j < results.length; j++) {
       var gifDiv = $("<div>");
+      gifDiv.addClass("col");
       var p = $("<p>");
+      p.addClass("cssPFix");
       p.text("Rating: " + results[j].rating);
       var foodImage = $("<img>");
       foodImage.attr("src", results[j].images.original_still.url);
