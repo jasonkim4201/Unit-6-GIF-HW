@@ -22,12 +22,12 @@ if (foodSearched === "") {
 food.push(foodSearched);
 console.log(food);
 renderButtons();
+$('input[type="text"]').val("");
 }
 });
 
 //clear button
-$("#default").on("click", function() {
-  /* location.reload(); */
+$("#clearAll").on("click", function() {
   $("#foodButtonArea").empty();
   $("#foodGifArea").empty();
   food.length = 0;
@@ -48,6 +48,8 @@ function renderButtons() {
 
 //displayFood function
 function displayFood() {
+  $("#foodGifArea").empty();
+  
   var foodType = $(this).attr("data-name");
   var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + foodType + "&api_key=RLHE1XgeOLJ2GDhYIp7941B9xDiXzHdf&limit=10";
   
@@ -61,7 +63,7 @@ function displayFood() {
     for (var j = 0; j < results.length; j++) {
       var gifDiv = $("<div>");
       var p = $("<p>");
-      p.text(results[j].rating);
+      p.text("Rating: " + results[j].rating);
       var foodImage = $("<img>");
       foodImage.attr("src", results[j].images.original_still.url);
       gifDiv.append(p);
