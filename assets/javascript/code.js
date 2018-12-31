@@ -22,6 +22,8 @@ $('input[type="text"]').val("");
 $("#clearAll").on("click", function() {
   $("#foodButtonArea").empty();
   $("#foodGifArea").empty();
+  $("#gifInstruction").empty();
+  $("#gifInstruction").removeClass("alert alert-warning text-center text-dark");
   food.length = 0;
 });
 
