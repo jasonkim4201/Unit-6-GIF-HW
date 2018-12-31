@@ -64,8 +64,8 @@ function displayFood() {
       foodImage.attr("data-animate", results[j].images.original.url);
       foodImage.attr("data-state", "still");
       foodImage.addClass("gif");
-      gifDiv.append(p);
       gifDiv.append(foodImage);
+      gifDiv.append(p);
       $("#foodGifArea").prepend(gifDiv);
     }
   });  
